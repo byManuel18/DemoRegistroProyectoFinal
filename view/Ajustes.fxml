@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="821.0" prefWidth="1099.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.ControladorAjustes">
+   <children>
+      <BorderPane layoutX="379.0" layoutY="220.0" prefHeight="639.0" prefWidth="918.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <bottom>
+            <HBox alignment="CENTER" prefHeight="48.0" prefWidth="918.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#Volver" text="Volver" />
+               </children>
+            </HBox>
+         </bottom>
+         <center>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+              <tabs>
+                <Tab text="Ajustes de Guardado de TXT">
+                     <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <GridPane layoutX="273.0" layoutY="244.0" prefHeight="561.6" prefWidth="918.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <RadioButton fx:id="radiobuttonpordefecto" mnemonicParsing="false" onAction="#ClikPorDefecto" text="Rutas por Defecto " GridPane.halignment="CENTER" />
+                                    <RadioButton fx:id="radiobutonmodificadas" mnemonicParsing="false" onAction="#ClickModificadas" text="Rutas Modificadas" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <children>
+                                          <TextField fx:id="carne" />
+                                          <Button fx:id="butcarne" mnemonicParsing="false" onAction="#TxtCarne" text="Importar" />
+                                          <Button fx:id="limpiartxtcarne" mnemonicParsing="false" onAction="#LimpiarTXTCarne" text="Limpiar" />
+                                       </children>
+                                    </HBox>
+                                    <Button mnemonicParsing="false" onAction="#Guardar" text="Guardar" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="14" />
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <children>
+                                          <TextField fx:id="agua" />
+                                          <Button fx:id="butagua" mnemonicParsing="false" onAction="#TxtAgua" text="Importar" />
+                                          <Button fx:id="limpiartxtagua" mnemonicParsing="false" onAction="#LimpiarTXTAgua" text="Limpiar" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <children>
+                                          <TextField fx:id="temperatura" />
+                                          <Button fx:id="buttemperatura" mnemonicParsing="false" onAction="#TxtTemperatura" text="Importar" />
+                                          <Button fx:id="limpiartxttemperatura" mnemonicParsing="false" onAction="#LimpiarTXTTemperatura" text="Limpiar" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                       <children>
+                                          <TextField fx:id="residuos" />
+                                          <Button fx:id="butresiduos" mnemonicParsing="false" onAction="#TxtResiduos" text="Importar" />
+                                          <Button fx:id="limpiartxtresiduos" mnemonicParsing="false" onAction="#LimpiarTXTResiduos" text="Limpiar" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                       <children>
+                                          <TextField fx:id="mantenimiento" />
+                                          <Button fx:id="butmantenimiento" mnemonicParsing="false" onAction="#TxtMantenimiento" text="Importar" />
+                                          <Button fx:id="limpiartxtmantenimiento" mnemonicParsing="false" onAction="#LimpiarTXTMantenimiento" text="Limpiar" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                       <children>
+                                          <TextField fx:id="facturacion" />
+                                          <Button fx:id="butfacturacion" mnemonicParsing="false" onAction="#TxtFacturacion" text="Importar" />
+                                          <Button fx:id="limpiartxtfacturacion" mnemonicParsing="false" onAction="#LimpiarTXTfacturacion" text="Limpiar" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                       <children>
+                                          <TextField fx:id="limpieza" />
+                                          <Button fx:id="butlimpieza" mnemonicParsing="false" onAction="#TxtLimpieza" text="Importar" />
+                                          <Button fx:id="limpiartxtlimpieza" mnemonicParsing="false" onAction="#LimpiarTXTLimpieza" text="Limpiar" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                       <children>
+                                          <TextField fx:id="produccion" />
+                                          <Button fx:id="butproduccion" mnemonicParsing="false" onAction="#TxtProduccion" text="Importar" />
+                                          <Button fx:id="limpiartxtproduccion" mnemonicParsing="false" onAction="#LimpiarTXTProduccion" text="Limpiar" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                       <children>
+                                          <TextField fx:id="trazcarne" />
+                                          <Button fx:id="buttrazcarne" mnemonicParsing="false" onAction="#TxtTrazCarne" text="Importar" />
+                                          <Button fx:id="limpiartxttrazcarne" mnemonicParsing="false" onAction="#LimpiarTXTTrazCarne" text="Limpiar" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                                       <children>
+                                          <TextField fx:id="trazlaure" />
+                                          <Button fx:id="buttrazlaure" mnemonicParsing="false" onAction="#TxtLaure" text="Importar" />
+                                          <Button fx:id="limpiartxttrazlaure" mnemonicParsing="false" onAction="#LimpiarTXTtrazlaure" text="Limpiar" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                                       <children>
+                                          <TextField fx:id="trazsalsas" />
+                                          <Button fx:id="buttrazsalsa" mnemonicParsing="false" onAction="#TxtSalsa" text="Importar" />
+                                          <Button fx:id="limpiartxtsalsas" mnemonicParsing="false" onAction="#LimpiarTXTtrazsalsas" text="Limpiar" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="12">
+                                       <children>
+                                          <TextField fx:id="trazmateriaprima" />
+                                          <Button fx:id="buttrazmateriaprima" mnemonicParsing="false" onAction="#TxtTrazMateriaPrima" text="Importar" />
+                                          <Button fx:id="limpiartxtmateriaprima" mnemonicParsing="false" onAction="#LimpiarTXTtrazmateriaprima" text="Limpiar" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="1" GridPane.rowIndex="13">
+                                       <children>
+                                          <TextField fx:id="trazenvases" />
+                                          <Button fx:id="buttrazenvases" mnemonicParsing="false" onAction="#TxtTrazEnvases" text="Importar" />
+                                          <Button fx:id="limpiartxttrazenvases" mnemonicParsing="false" onAction="#LimpiarTXTtrazenvases" text="Limpiar" />
+                                       </children>
+                                    </HBox>
+                                    <Label text="Guardar TXT Carne" GridPane.rowIndex="1" />
+                                    <Label text="Guardar TXT Agua" GridPane.rowIndex="2" />
+                                    <Label text="Guardar TXT Temperaturas" GridPane.rowIndex="3" />
+                                    <Label text="Guardar TXT Residuos" GridPane.rowIndex="4" />
+                                    <Label text="Guardar TXT Mantenimiento y Medidas" GridPane.rowIndex="5" />
+                                    <Label text="Guardar TXT Facturación" GridPane.rowIndex="6" />
+                                    <Label text="Guardar TXT Limpieza" GridPane.rowIndex="7" />
+                                    <Label text="Guardar TXT Producción" GridPane.rowIndex="8" />
+                                    <Label text="Guardar TXT Trazabilidad Carne" GridPane.rowIndex="9" />
+                                    <Label text="Guardar TXT Trazabilidad Laure" GridPane.rowIndex="10" />
+                                    <Label text="Guardar TXT Trazabilidad Salsas " GridPane.rowIndex="11" />
+                                    <Label text="Guardar TXT Trazabilidad Materia Prima" GridPane.rowIndex="12" />
+                                    <Label text="Guardar TXT Trazabilidad TXT Trazabilidad Envases" GridPane.rowIndex="13" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                     </content></Tab>
+                <Tab onSelectionChanged="#PestanaImagenes" text="Ajustes de Imagenes">
+                     <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <GridPane layoutX="250.0" layoutY="131.0" prefHeight="552.0" prefWidth="918.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="417.0" minWidth="10.0" prefWidth="200.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="713.0" minWidth="10.0" prefWidth="280.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="612.0" minWidth="10.0" prefWidth="612.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <RadioButton fx:id="radiobuttonimagendefecto" mnemonicParsing="false" onAction="#ClikFotosDefecto" text="Imagenes por Defecto" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                                    <RadioButton fx:id="radiobuttonimagenmodificadas" mnemonicParsing="false" onAction="#ClikFotosModificadas" text="Imagenes Modificadas" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                       <children>
+                                          <ImageView fx:id="defcarne" fitHeight="95.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                       <children>
+                                          <ImageView fx:id="deffacturacion" fitHeight="95.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                       <children>
+                                          <ImageView fx:id="deflimpieza" fitHeight="95.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                       <children>
+                                          <ImageView fx:id="defaggua" fitHeight="95.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <children>
+                                          <ImageView fx:id="defresiduos" fitHeight="95.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                       <children>
+                                          <ImageView fx:id="defmantenimiento" fitHeight="95.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                       <children>
+                                          <ImageView fx:id="defproduccion" fitHeight="95.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                       <children>
+                                          <ImageView fx:id="deftrazabilidad" fitHeight="95.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <children>
+                                          <ImageView fx:id="deftemperatura" fitHeight="95.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true" />
+                                       </children>
+                                    </HBox>
+                                    <Button mnemonicParsing="false" onAction="#GuardarFotos" text="Guardar" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
+                                    <Label text="Carne" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                                    <Label text="Temperatura " GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                                    <Label text="Residuos" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+                                    <Label text="Trazabilidad" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+                                    <Label text="Limpieza" GridPane.halignment="RIGHT" GridPane.rowIndex="7" />
+                                    <Label text="Mantenimiento y medidas" GridPane.halignment="RIGHT" GridPane.rowIndex="8" />
+                                    <Label text="Facturación" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+                                    <Label text="Producción" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+                                    <Label text="Agua" GridPane.halignment="RIGHT" GridPane.rowIndex="9" />
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                       <children>
+                                          <ImageView fx:id="modcarne" fitHeight="95.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true" />
+                                          <Button fx:id="buttcarne" mnemonicParsing="false" onAction="#ImportarImagenCarne" text="Importar" />
+                                          <Button fx:id="limpiarfotocarne" mnemonicParsing="false" onAction="#LimpiarFotoCarne" text="Limpiar" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                       <children>
+                                          <ImageView fx:id="modtemperatura" fitHeight="95.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true" />
+                                          <Button fx:id="butttemperatura" mnemonicParsing="false" onAction="#ImportarImagenTemperatura" text="Importar" />
+                                          <Button fx:id="limpiarfototemperatura" mnemonicParsing="false" onAction="#LimpiarFotoTemperatura" text="Limpiar" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                       <children>
+                                          <ImageView fx:id="modresiduos" fitHeight="95.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true" />
+                                          <Button fx:id="buttresiduos" mnemonicParsing="false" onAction="#ImportarImagenresiduos" text="Importar" />
+                                          <Button fx:id="limpiarfotoresiduos" mnemonicParsing="false" onAction="#LimpiarFotoResiduos" text="Limpiar" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                       <children>
+                                          <ImageView fx:id="modtrazabilidad" fitHeight="95.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true" />
+                                          <Button fx:id="butttrazabilidad" mnemonicParsing="false" onAction="#ImportarImagenTrazabilidad" text="Importar" />
+                                          <Button fx:id="limpiarfototrazabilidad" mnemonicParsing="false" onAction="#LimpiarFotoTrazabilidad" text="Limpiar" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                       <children>
+                                          <ImageView fx:id="modproduccion" fitHeight="95.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true" />
+                                          <Button fx:id="buttproduccion" mnemonicParsing="false" onAction="#ImportarImagenProduccion" text="Importar" />
+                                          <Button fx:id="limpiarfotoproduccion" mnemonicParsing="false" onAction="#LimpiarFotoProduccion" text="Limpiar" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                                       <children>
+                                          <ImageView fx:id="modfacturacion" fitHeight="95.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true" />
+                                          <Button fx:id="buttfacturacion" mnemonicParsing="false" onAction="#ImportarImagenFacturacion" text="Importar" />
+                                          <Button fx:id="limpiarfotofacturacion" mnemonicParsing="false" onAction="#LimpiarFotoFacturacion" text="Limpiar" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                                       <children>
+                                          <ImageView fx:id="modlimpieza" fitHeight="95.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true" />
+                                          <Button fx:id="buttlimpieza" mnemonicParsing="false" onAction="#ImportarImagenLimpieza" text="Importar" />
+                                          <Button fx:id="limpiarfotolimmpieza" mnemonicParsing="false" onAction="#LimpiarFotoLimpieza" text="Limpiar" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                                       <children>
+                                          <ImageView fx:id="modmantenimiento" fitHeight="95.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true" />
+                                          <Button fx:id="buttmantenimiento" mnemonicParsing="false" onAction="#ImportarImagenMantenimiento" text="Importar" />
+                                          <Button fx:id="limpiarfotomantenimiento" mnemonicParsing="false" onAction="#LimpiarFotoMantenimiento" text="Limpiar" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.columnIndex="2" GridPane.rowIndex="9">
+                                       <children>
+                                          <ImageView fx:id="modaggua" fitHeight="95.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true" />
+                                          <Button fx:id="buttagua" mnemonicParsing="false" onAction="#ImportarImagenAgua" text="Importar" />
+                                          <Button fx:id="limpiarfotoagua" mnemonicParsing="false" onAction="#LimpiarFotoAggua" text="Limpiar" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </GridPane>
+                           </children></AnchorPane>
+                     </content></Tab>
+                  <Tab text="Ajustes Generales">
+                     <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                     </content></Tab>
+              </tabs>
+            </TabPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

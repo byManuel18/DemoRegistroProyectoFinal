@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="716.0" prefWidth="1196.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.ControladorMantenimiento">
+   <children>
+      <BorderPane layoutX="124.0" layoutY="79.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <bottom>
+            <Button mnemonicParsing="false" onAction="#Volver" text="Volver" BorderPane.alignment="CENTER" />
+         </bottom>
+         <center>
+            <TabPane prefHeight="572.0" prefWidth="909.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+              <tabs>
+                <Tab onSelectionChanged="#TituloMedidasPreventivas" text="MEDIDAS PREVENTIVAS">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <SplitPane dividerPositions="0.8687" layoutX="376.0" layoutY="201.0" prefHeight="562.0" prefWidth="1030.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <SplitPane dividerPositions="0.9081" layoutX="280.0" layoutY="138.0" orientation="VERTICAL" prefHeight="560.0" prefWidth="817.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <items>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="498.0" prefWidth="815.0">
+                                                   <children>
+                                                      <TableView fx:id="tabla_MedPrev" prefHeight="508.0" prefWidth="815.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <columns>
+                                                          <TableColumn fx:id="colum_fecha_MedPrev" prefWidth="75.0" text="FECHA" />
+                                                          <TableColumn fx:id="colum_puertasyventanas_MedPrev" prefWidth="75.0" text="ESTADO DE PUERTAS Y VENTANAS" />
+                                                            <TableColumn fx:id="colum_lamparas_MedPrev" prefWidth="75.0" text="ESTADO DE LÁMPARAS ANTI INSECTOS" />
+                                                            <TableColumn fx:id="colum_desagues_MedPrev" prefWidth="75.0" text="ESTADO DE DESAGÜES" />
+                                                            <TableColumn fx:id="colum_limpieza_MedPrev" prefWidth="75.0" text="ESTADO DE LIMPIEZA" />
+                                                            <TableColumn fx:id="colum_plagas_MedPrev" prefWidth="75.0" text="VIGILANCIA (PLAGAS)" />
+                                                            <TableColumn fx:id="colum_firmado_MedPrev" prefWidth="75.0" text="FIRMADO" />
+                                                        </columns>
+                                                         <columnResizePolicy>
+                                                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                         </columnResizePolicy>
+                                                      </TableView>
+                                                   </children>
+                                                </AnchorPane>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <GridPane layoutX="119.0" layoutY="-31.0" prefHeight="60.0" prefWidth="815.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <columnConstraints>
+                                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                         <children>
+                                                            <Label text="     Buscar por mes " />
+                                                            <Label text="     Buscar por fecha" GridPane.rowIndex="1" />
+                                                            <Label text="     Volver a mostrar todo " GridPane.rowIndex="2" />
+                                                            <Label text="Eliminar registro seleccionado" textFill="RED" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
+                                                            <Button mnemonicParsing="false" onAction="#EliminarMedPrev" text="Eliminar" textFill="RED" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                                                            <Button mnemonicParsing="false" onAction="#MostrarTodosMedPrev" text="Limpiar" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                                                            <DatePicker fx:id="busquedaporfecha_MedPrev" onAction="#BusquedaPorFechaMedPrev" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                                                            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                                                               <children>
+                                                                  <ChoiceBox fx:id="buscarpormes_MedPrev" prefHeight="31.0" prefWidth="138.0" />
+                                                                  <Button mnemonicParsing="false" onAction="#BusquedaPorMesMedPrev" prefHeight="31.0" prefWidth="78.0" text="Buscar" />
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </GridPane>
+                                                   </children>
+                                                </AnchorPane>
+                                            </items>
+                                          </SplitPane>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <GridPane layoutX="-11.0" layoutY="172.0" prefHeight="560.0" prefWidth="203.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Label text="FECHA" />
+                                                <Label text="ESTADO DE PUERTAS Y VENTANAS" GridPane.rowIndex="1" />
+                                                <Label text="ESTADO DE LÁMPARAS ANTI INSECTOS" GridPane.rowIndex="2" />
+                                                <Label text="ESTADO DE DESAGÜES" GridPane.rowIndex="3" />
+                                                <Label text="ESTADO DE LIMPIEZA" GridPane.rowIndex="4" />
+                                                <Label text="VIGILANCIA (PLAGAS)" GridPane.rowIndex="5" />
+                                                <Label text="FIRMA" GridPane.rowIndex="6" />
+                                                <Button mnemonicParsing="false" onAction="#ADDMedPrev" text="Añadir" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+                                                <Button mnemonicParsing="false" onAction="#LimpiarMedPrev" text="Limpiar" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+                                                <DatePicker fx:id="introfecha_MedPrev" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                                                <ChoiceBox fx:id="intro_puertasyventanas_MedPrev" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                                                <ChoiceBox fx:id="intro_lamparas_MedPrev" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                                                <ChoiceBox fx:id="intro_desagues_MedPrev" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                                                <ChoiceBox fx:id="intro_limpieza_MedPrev" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                                                <ChoiceBox fx:id="intro_plagas_MedPrev" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                                                <ChoiceBox fx:id="intofirmado_MedPrev" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab onSelectionChanged="#TituloMantenimiento" text="MANTENIMIENTO">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <SplitPane dividerPositions="0.8687" layoutX="498.0" layoutY="117.0" prefHeight="646.0" prefWidth="1196.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <SplitPane dividerPositions="0.9081" layoutX="128.0" layoutY="170.0" orientation="VERTICAL" prefHeight="644.0" prefWidth="352.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <items>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <TableView fx:id="tabla_mantenimiento" layoutX="149.0" layoutY="159.0" prefHeight="579.0" prefWidth="952.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <columns>
+                                                          <TableColumn fx:id="colum_fecha_mantenimiento" prefWidth="75.0" text="FECHA" />
+                                                          <TableColumn prefWidth="75.0" text="OPERACIONES REALIZADAS EN LOCALES">
+                                                               <columns>
+                                                                  <TableColumn fx:id="colum_suelo_mantenimiento" prefWidth="75.0" text="SUELO" />
+                                                                  <TableColumn fx:id="colum_paredes_mantenimiento" prefWidth="75.0" text="PAREDES" />
+                                                                  <TableColumn fx:id="colum_techo_mantenimiento" prefWidth="75.0" text="TECHO" />
+                                                                  <TableColumn fx:id="colum_electricidad_mantenimiento" prefWidth="75.0" text="ELECTRICIDAD" />
+                                                                  <TableColumn fx:id="colum_fonta_mantenimiento" prefWidth="75.0" text="FONTAN" />
+                                                               </columns>
+                                                            </TableColumn>
+                                                            <TableColumn fx:id="colum_operaciones_mantenimiento" prefWidth="75.0" text="OPERACIONES REALIZADAS A EQUIPOS Y UTENSILIOS" />
+                                                            <TableColumn fx:id="colum_calibracion_mantenimiento" prefWidth="75.0" text="CALIBRACIÓN EQUIPO DE FRÍO" />
+                                                            <TableColumn fx:id="colum_revison_mantenimiento" prefWidth="75.0" text="REVISIÓN BALANZAS" />
+                                                            <TableColumn fx:id="colum_firmado_mantenimiento" prefWidth="75.0" text="FIRMADO" />
+                                                        </columns>
+                                                         <columnResizePolicy>
+                                                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                         </columnResizePolicy>
+                                                      </TableView>
+                                                   </children>
+                                                </AnchorPane>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <GridPane layoutX="227.0" layoutY="-17.0" prefHeight="55.0" prefWidth="952.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <columnConstraints>
+                                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                         <children>
+                                                            <Label text="     Buscar por mes" />
+                                                            <Label text="     Buscar por fecha" GridPane.rowIndex="1" />
+                                                            <Label text="     Volver a mostrar todo" GridPane.rowIndex="2" />
+                                                            <Label text="Eliminar registro seleccionado" textFill="RED" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
+                                                            <Button mnemonicParsing="false" onAction="#Eliminarmantenimientor" text="Eliminar" textFill="RED" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                                                            <Button mnemonicParsing="false" onAction="#MostrarTodosMantenimiento" text="Limpiar" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                                                            <DatePicker fx:id="busquedaporfecha_mantenimiento" onAction="#BusquedaPorFechaMantenimiento" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                                                            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                                                               <children>
+                                                                  <ChoiceBox fx:id="buscarpormes_mantenimiento" prefHeight="31.0" prefWidth="138.0" />
+                                                                  <Button mnemonicParsing="false" onAction="#BusquedaPorMesMantenimiento" prefHeight="31.0" prefWidth="78.0" text="Buscar" />
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </GridPane>
+                                                   </children>
+                                                </AnchorPane>
+                                            </items>
+                                          </SplitPane>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <GridPane layoutX="41.0" layoutY="205.0" prefHeight="644.0" prefWidth="232.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#ADDMantenimienti" text="Añadir" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
+                                                <Button mnemonicParsing="false" onAction="#LimpiarMantenimiento" text="Limpiar" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="10" />
+                                                <Label text="FECHA" />
+                                                <Label text="SUELO" GridPane.rowIndex="1" />
+                                                <Label text="PAREDES" GridPane.rowIndex="2" />
+                                                <Label text="TECHO" GridPane.rowIndex="3" />
+                                                <Label text="ELECTRICIDAD" GridPane.rowIndex="4" />
+                                                <Label text="FONTANERÍA" GridPane.rowIndex="5" />
+                                                <Label text="OPERACIONES REALIZADAS A EQUIPOS Y UTENSILIOS" GridPane.rowIndex="6" />
+                                                <Label text="FRIMADO" GridPane.rowIndex="9" />
+                                                <Label text="REVISIÓN BALANZAS" GridPane.rowIndex="8" />
+                                                <Label text="CALIBRACIÓN EQUIPO DE FRÍO" GridPane.rowIndex="7" />
+                                                <DatePicker fx:id="introfecha_mantenimiento" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                                                <ChoiceBox fx:id="intro_suelo_mantenimiento" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                                                <ChoiceBox fx:id="intro_paredes_mantenimiento" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                                                <ChoiceBox fx:id="intro_techos_mantenimiento" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                                                <ChoiceBox fx:id="intro_electricidad_mantenimiento" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                                                <ChoiceBox fx:id="intro_font_mantenimiento" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                                                <ChoiceBox fx:id="intro_opera_mantenimiento" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                                                <ChoiceBox fx:id="intro_calibra_mantenimiento" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="7" />
+                                                <ChoiceBox fx:id="intro_revision_mantenimiento" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+                                                <ChoiceBox fx:id="intofirmado_mantenimiento" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="9" />
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab onSelectionChanged="#TituloManipuladores" text="MANIPULADOR">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <SplitPane dividerPositions="0.8687" layoutX="307.0" layoutY="330.0" prefHeight="646.0" prefWidth="1196.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <SplitPane dividerPositions="0.9081" layoutX="217.0" layoutY="166.0" orientation="VERTICAL" prefHeight="644.0" prefWidth="989.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <items>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <TableView fx:id="tabla_manipuladores" layoutX="255.0" layoutY="81.0" prefHeight="579.0" prefWidth="1031.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <columns>
+                                                          <TableColumn fx:id="colum_fecha_manipulador" prefWidth="75.0" text="FECHA" />
+                                                          <TableColumn fx:id="colum_vestimienta_limpia_manipulador" prefWidth="75.0" text="VESTIMENTA LIMPIA" />
+                                                            <TableColumn fx:id="colum_higiene_personal_manipulador" prefWidth="75.0" text="HIGIENE PERSONAL" />
+                                                            <TableColumn fx:id="colum_buenas_practicas_manipulador" prefWidth="272.75" text="BUENAS PRÁCTICAS MANIPULACIÓN" />
+                                                            <TableColumn fx:id="colum_incidencias_acciones_correctoras_manipulador" minWidth="0.0" prefWidth="199.5" text="INCIDENCIAS ACCIONES CORRECTAS" />
+                                                            <TableColumn fx:id="colum_firmado_manipulador" prefWidth="75.0" text="FIRMADO" />
+                                                        </columns>
+                                                         <columnResizePolicy>
+                                                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                         </columnResizePolicy>
+                                                      </TableView>
+                                                   </children>
+                                                </AnchorPane>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                   <children>
+                                                      <GridPane layoutX="214.0" layoutY="-31.0" prefHeight="55.0" prefWidth="1031.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                        <columnConstraints>
+                                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        </rowConstraints>
+                                                         <children>
+                                                            <Label text="Eliminar registro elemento" textFill="#f80000" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
+                                                            <Label text="     Buscar por mes" />
+                                                            <Label text="     Buscar por fecha" GridPane.rowIndex="1" />
+                                                            <Label text="     Volver a mostrar todos" GridPane.rowIndex="2" />
+                                                            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                                                               <children>
+                                                                  <ChoiceBox fx:id="buscarpormes_manipuladores" prefWidth="138.0" />
+                                                                  <Button mnemonicParsing="false" onAction="#BusquedaPorMesManipulador" prefHeight="31.0" prefWidth="78.0" text="Buscar" />
+                                                               </children>
+                                                            </HBox>
+                                                            <DatePicker fx:id="busquedaporfecha_manipuladores" onAction="#BusquedaPorFechaManipulador" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                                                            <Button mnemonicParsing="false" onAction="#MostrarTodosManipuladores" text="Limpiar" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                                                            <Button mnemonicParsing="false" onAction="#EliminarManipulador" text="Eliminar" textFill="RED" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                                                         </children>
+                                                      </GridPane>
+                                                   </children>
+                                                </AnchorPane>
+                                            </items>
+                                          </SplitPane>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                       <children>
+                                          <GridPane layoutX="-35.0" layoutY="207.0" prefHeight="644.0" prefWidth="153.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#ADDManipulador" text="Añadir" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                                                <Button mnemonicParsing="false" onAction="#LimpiarManipuladores" text="Limpiar" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                                                <Label text="FECHA" />
+                                                <Label text="VESTIMENTA LIMPIA" GridPane.rowIndex="1" />
+                                                <Label text="HIGIENE PERSONAL" GridPane.rowIndex="2" />
+                                                <Label text="BUENAS PRÁCTICAS MANIPULACIÓN" GridPane.rowIndex="3" />
+                                                <Label text="INCIDENCIAS ACCIONES CORRECTAS" GridPane.rowIndex="4" />
+                                                <Label text="FIRMADO" GridPane.rowIndex="5" />
+                                                <DatePicker fx:id="introfecha_manipuladores" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                                                <ChoiceBox fx:id="intro_vestimienta" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                                                <ChoiceBox fx:id="intro_higiene_personal" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                                                <ChoiceBox fx:id="intro_buenas_practicas" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                                                <ChoiceBox fx:id="intro_ncidencias_acciones_correctoras" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                                                <ChoiceBox fx:id="intofirmado_manipuladores" prefWidth="150.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

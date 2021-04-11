@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane maxHeight="758.0" maxWidth="1120.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="758.0" prefWidth="1120.0" styleClass="anchor" stylesheets="/assets/pruebafondo.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controladores.ControladorInicio">
+   <children>
+      <BorderPane prefHeight="758.0" prefWidth="1120.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="Archivo">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#GuardarCarne" text="Guardar Registro Carne" />
+                        <MenuItem mnemonicParsing="false" onAction="#GuardarAgua" text="Guardar Registro Agua" />
+                        <MenuItem mnemonicParsing="false" onAction="#GuardarTemperaturas" text="Guardar Registro Temperaturas" />
+                        <MenuItem mnemonicParsing="false" onAction="#GuardarLimpieza" text="Guardar Registro Limpieza" />
+                        <MenuItem mnemonicParsing="false" onAction="#GuardarResiduos" text="Guardar Registro Residuos" />
+                        <MenuItem mnemonicParsing="false" onAction="#GuardarMedidasPrev" text="Guardar Registro Mantenimiento y Medidas" />
+                        <MenuItem mnemonicParsing="false" onAction="#GuardarTrazabilidad" text="Guardar Registro Trazabilidad" />
+                        <MenuItem mnemonicParsing="false" text="Guardar Facturación" />
+                        <MenuItem mnemonicParsing="false" onAction="#GuardarProduccion" text="Guardar Producción" />
+                        <MenuItem mnemonicParsing="false" onAction="#GuardarTodo" text="Guardar Todo" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Configuración">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#Ajustes" text="Ajustes" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Más....">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Información y Ayuda" />
+                        <MenuItem mnemonicParsing="false" onAction="#Cerrar" text="Cerrar" />
+                     </items></Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <center>
+            <GridPane prefHeight="443.0" prefWidth="1120.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="REGISTRO CARNE" GridPane.halignment="CENTER" />
+                  <Label text="REGISTRO AGUA" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+                  <Label text="REGISTRO TEMPERATURA" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Label text="REGISTRO LIMPIEZA" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <Label text="REGISTRO RESIDUOS" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <children>
+                        <ImageView fx:id="carne_img" fitHeight="150.0" fitWidth="200.0" onMousePressed="#registro_carne" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                     <children>
+                        <ImageView fx:id="temp_img" fitHeight="150.0" fitWidth="200.0" onMousePressed="#registro_temp" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+                     <children>
+                        <ImageView fx:id="res_img" fitHeight="150.0" fitWidth="200.0" onMousePressed="#registro_residuos" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <children>
+                        <ImageView fx:id="agua_img" fitHeight="150.0" fitWidth="200.0" onMousePressed="#registro_agua" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                     <children>
+                        <ImageView fx:id="limp_img" fitHeight="150.0" fitWidth="200.0" onMousePressed="#registro_limpieza" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </HBox>
+                  <Label text="MANTENIMIENTO Y MEDIDAS" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                  <HBox alignment="CENTER" prefHeight="102.0" prefWidth="560.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+                     <children>
+                        <ImageView fx:id="man_img" fitHeight="150.0" fitWidth="200.0" onMousePressed="#registro_mantenimiento" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </HBox>
+                  <Label text="TRAZABILIDAD" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                  <Label text="FACTURACIÓN" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                     <children>
+                        <ImageView fx:id="traza_img" fitHeight="150.0" fitWidth="200.0" onMousePressed="#registro_trazabilidad" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="7">
+                     <children>
+                        <ImageView fx:id="facturacion" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </HBox>
+                  <Label text="PRODUCCIÓN" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                     <children>
+                        <ImageView fx:id="produccion" fitHeight="150.0" fitWidth="200.0" onMousePressed="#registro_produccion" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </HBox>
+               </children>
+            </GridPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
