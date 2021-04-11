@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CANALES>
+    <Canal>
+        <conector_bae>jdbc:h2:./src/resources/BaseDatos/Sanidad</conector_bae>
+        <crearcion_tablas>CREATE TABLE IF NOT EXISTS productos_carnicos (id INT PRIMARY KEY auto_increment,fecha DATE ,proveedor VARCHAR(255), producto VARCHAR(255), lote VARCHAR(255),firmado ENUM('FIRMADO','NO_FIRMADO'));</crearcion_tablas>
+        <crearcion_tablas>CREATE TABLE IF NOT EXISTS trazabilidad_carne (id_traza int PRIMARY KEY auto_increment,id_carne INT, fecha_inicio DATE, fecha_fin DATE, firmado ENUM('FIRMADO','NO_FIRMADO'), FOREIGN KEY (id_carne) REFERENCES productos_carnicos (id) ON DELETE CASCADE ON UPDATE CASCADE);</crearcion_tablas>
+        <crearcion_tablas>CREATE TABLE IF NOT EXISTS trazabilidad_laure(id_traza INT PRIMARY KEY auto_increment, fecha_llegada DATE, fecha_inicio DATE, fecha_fin DATE, proveedor VARCHAR(100), mercancia VARCHAR(100), lote VARCHAR(100), firmado ENUM('FIRMADO','NO_FIRMADO'))</crearcion_tablas>
+        <crearcion_tablas>CREATE TABLE IF NOT EXISTS trazabilidad_materiaprima(id_traza INT PRIMARY KEY auto_increment, fecha_llegada DATE, fecha_inicio DATE, fecha_fin DATE, proveedor VARCHAR(100), mercancia VARCHAR(100), lote VARCHAR(100), firmado ENUM('FIRMADO','NO_FIRMADO'))</crearcion_tablas>
+        <crearcion_tablas>CREATE TABLE IF NOT EXISTS trazabilidad_salsas(id_traza INT PRIMARY KEY auto_increment, fecha_llegada DATE, fecha_inicio DATE, fecha_fin DATE, proveedor VARCHAR(100), mercancia VARCHAR(100), lote VARCHAR(100), firmado ENUM('FIRMADO','NO_FIRMADO'))</crearcion_tablas>
+        <crearcion_tablas>CREATE TABLE IF NOT EXISTS trazabilidad_envases(id_traza INT PRIMARY KEY auto_increment, fecha_llegada DATE, fecha_inicio DATE, fecha_fin DATE, proveedor VARCHAR(100), mercancia VARCHAR(100), lote VARCHAR(100), firmado ENUM('FIRMADO','NO_FIRMADO'))</crearcion_tablas>
+        <crearcion_tablas>CREATE TABLE IF NOT EXISTS produccion(id_pro INT PRIMARY KEY auto_increment, fecha_lote DATE,nombre VARCHAR(100), cantidad VARCHAR(100), lotes_carnes ARRAY, lotes_salsas ARRAY , lotes_laure ARRAY, lotes_materiaprima ARRAY, firmado ENUM('FIRMADO','NO_FIRMADO'))</crearcion_tablas>
+        <driver>org.h2.Driver</driver>
+        <nombre_base>Sanidad</nombre_base>
+    </Canal>
+    <Canal>
+        <conector_bae>jdbc:h2:./src/resources/BaseDatos/Productos</conector_bae>
+        <crearcion_tablas>CREATE TABLE IF NOT EXISTS inventario (id INT PRIMARY KEY auto_increment,nombre VARCHAR(255), marca VARCHAR(255),precio FLOAT,tipo ENUM ('Und','Kg'));</crearcion_tablas>
+        <crearcion_tablas>CREATE TABLE IF NOT EXISTS Inventario_cantidad (id_producto INT PRIMARY KEY,cantidad INT UNSIGNED NOT NULL,FOREIGN KEY (id_producto) REFERENCES inventario (id) ON DELETE CASCADE ON UPDATE CASCADE);</crearcion_tablas>
+        <driver>org.h2.Driver</driver>
+        <nombre_base>Productos</nombre_base>
+    </Canal>
+    <Canal>
+        <conector_bae>jdbc:h2:./src/resources/BaseDatos/Produccion</conector_bae>
+        <crearcion_tablas>CREATE TABLE IF NOT EXISTS registro_produccion(id INT PRIMARY KEY auto_increment,fecha DATE ,producto VARCHAR(255),cantidad VARCHAR(255),lote VARCHAR(255),firmado ENUM('FIRMADO','NO_FIRMADO'));</crearcion_tablas>
+        <driver>org.h2.Driver</driver>
+        <nombre_base>PRODUCCION</nombre_base>
+    </Canal>
+    <Canal>
+        <conector_bae>jdbc:h2:./src/resources/BaseDatos/Limpieza_Agua_Temperatura_Residuos</conector_bae>
+        <crearcion_tablas>CREATE TABLE IF NOT EXISTS registro_limpieza(id INT PRIMARY KEY auto_increment,fecha DATE ,obrador ENUM('X','NULO'),aseo ENUM('X','NULO'),venta ENUM('X','NULO'),picadora ENUM('X','NULO'),embutidora ENUM('X','NULO'),sierra ENUM('X','NULO'),cuchillos_y_utensilios ENUM('X','NULO'),frigorifico_materia_prima ENUM('X','NULO'),frigorifico_producto_terminado ENUM('X','NULO'),contenedor_residuos ENUM('X','NULO'),firmado ENUM('FIRMADO','NO_FIRMADO'));</crearcion_tablas>
+        <crearcion_tablas>CREATE TABLE IF NOT EXISTS registro_agua(id INT PRIMARY KEY auto_increment,fecha DATE ,punto_muestreo VARCHAR(255), control_organoleptico VARCHAR(255), estado ENUM('B','M'),firmado ENUM('FIRMADO','NO_FIRMADO'));</crearcion_tablas>
+        <crearcion_tablas>CREATE TABLE IF NOT EXISTS retirada_de_residuos(id INT PRIMARY KEY auto_increment,fecha DATE ,persona VARCHAR(255), cantidad VARCHAR(255),firmado ENUM('FIRMADO','NO_FIRMADO'));</crearcion_tablas>
+        <crearcion_tablas>CREATE TABLE IF NOT EXISTS registros_temperatura(id INT PRIMARY KEY auto_increment,fecha DATE ,vitrina_espositora VARCHAR(10), armario_frigorifico VARCHAR(10), armario_productos_cocinados VARCHAR(10), armario_congelador VARCHAR(10), armario_producto_terminado VARCHAR(10), alcon_congelador VARCHAR(10),firmado ENUM('FIRMADO','NO_FIRMADO'));</crearcion_tablas>
+        <driver>org.h2.Driver</driver>
+        <nombre_base>MANTENIMIENTO</nombre_base>
+    </Canal>
+    <Canal>
+        <conector_bae>jdbc:h2:./src/resources/BaseDatos/Medidas</conector_bae>
+        <crearcion_tablas>CREATE TABLE IF NOT EXISTS registro_medidas_preventivas_ddd(id INT PRIMARY KEY auto_increment,fecha DATE ,estado_de_puertas_y_ventanas ENUM('C','I'),estado_de_lamparas_antiinsectos ENUM('C','I'),estado_de_desagues ENUM('C','I'),estado_de_limpieza ENUM('C','I'),indicio_de_plagas ENUM('C','I'),firmado ENUM('FIRMADO','NO_FIRMADO'));</crearcion_tablas>
+        <crearcion_tablas>CREATE TABLE IF NOT EXISTS registro_de_mantenimiento(id INT PRIMARY KEY auto_increment,fecha DATE ,suelo ENUM('C','I'),paredes ENUM('C','I'),techos ENUM('C','I'),electricidad ENUM('C','I'),fontaneria ENUM('C','I'),operaciones_realizadas_a_equipos_y_utensilios ENUM('C','I'),calibracion_equipo_frio ENUM('C','I'),revision_balanzas ENUM('C','I'),firmado ENUM('FIRMADO','NO_FIRMADO'));</crearcion_tablas>
+        <crearcion_tablas>CREATE TABLE IF NOT EXISTS registro_manipuladores(id INT PRIMARY KEY auto_increment,fecha DATE ,vestimienta_limpia ENUM('C','I'),higiene_personal ENUM('C','I'),buenas_practicas ENUM('C','I'),incidencias_acciones_correctoras ENUM('C','I'),firmado ENUM('FIRMADO','NO_FIRMADO'));&lt;/</crearcion_tablas>
+        <driver>org.h2.Driver</driver>
+        <nombre_base>MEDIDAS</nombre_base>
+    </Canal>
+</CANALES>

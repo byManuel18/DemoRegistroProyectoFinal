@@ -1,0 +1,8 @@
+2021-03-29 13:00:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "<[*]/"
+Syntax error in SQL statement "<[*]/"; SQL statement:
+</ [42000-200]
+2021-04-10 21:01:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "<[*]/"
+Syntax error in SQL statement "<[*]/"; SQL statement:
+</ [42000-200]
